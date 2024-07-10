@@ -1,0 +1,12 @@
+version: '3'
+services:
+  webapp:
+    image: aolifu/stirling-pdf:v2
+    container_name: stirling-pdf
+    network_mode: "host"
+    ports:
+      - "11004:8080"
+    environment:
+      - TZ=Asia/Shanghai
+    volumes:
+      - /root/aolifu/stirling-pdf/logs:/logs
