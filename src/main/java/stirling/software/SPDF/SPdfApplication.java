@@ -18,7 +18,6 @@ import org.springframework.core.env.Environment;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 import io.github.pixee.security.SystemCommand;
-
 import jakarta.annotation.PostConstruct;
 import stirling.software.SPDF.config.ConfigInitializer;
 import stirling.software.SPDF.model.ApplicationProperties;
@@ -69,7 +68,7 @@ public class SPdfApplication {
         app.addInitializers(new ConfigInitializer());
         Map<String, String> propertyFiles = new HashMap<>();
 
-        // stirling pdf settings file
+        // pdf百宝箱 settings file
         if (Files.exists(Paths.get("configs/settings.yml"))) {
             propertyFiles.put("spring.config.additional-location", "file:configs/settings.yml");
         } else {

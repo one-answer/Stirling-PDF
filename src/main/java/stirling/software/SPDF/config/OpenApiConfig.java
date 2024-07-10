@@ -9,7 +9,6 @@ import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.security.SecurityRequirement;
 import io.swagger.v3.oas.models.security.SecurityScheme;
-
 import stirling.software.SPDF.model.ApplicationProperties;
 
 @Configuration
@@ -34,7 +33,7 @@ public class OpenApiConfig {
                     .components(new Components())
                     .info(
                             new Info()
-                                    .title("Stirling PDF API")
+                                    .title("pdf百宝箱 API")
                                     .version(version)
                                     .description(
                                             "API documentation for all Server-Side processing.\nPlease note some functionality might be UI only and missing from here."));
@@ -43,7 +42,7 @@ public class OpenApiConfig {
                     .components(new Components().addSecuritySchemes("apiKey", apiKeyScheme))
                     .info(
                             new Info()
-                                    .title("Stirling PDF API")
+                                    .title("pdf百宝箱 API")
                                     .version(version)
                                     .description(
                                             "API documentation for all Server-Side processing.\nPlease note some functionality might be UI only and missing from here."))
