@@ -1,69 +1,85 @@
 <!DOCTYPE html>
-<html th:lang="${#locale.language}" th:dir="#{language.direction}" th:data-language="${#locale.toString()}" xmlns:th="https://www.thymeleaf.org">
-  <head>
-  <th:block th:insert="~{fragments/common :: head(title=#{changeCreds.title}, header=#{changeCreds.header})}"></th:block>
-  </head>
+<html th:lang="${#locale.language}" th:dir="#{language.direction}" th:data-language="${#locale.toString()}"
+  xmlns:th="https://www.thymeleaf.org">
 
-  <body>
-    <th:block th:insert="~{fragments/common :: game}"></th:block>
-    <div id="page-container">
-      <div id="content-wrap">
-        <th:block th:insert="~{fragments/navbar.html :: navbar}"></th:block>
-        <br><br>
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-md-9 bg-card">
+<head>
+  <th:block th:insert="~{fragments/common :: head(title=#{changeCreds.title}, header=#{changeCreds.header})}">
+  </th:block>
+</head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R4D3Q2GG8X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
 
-              <!-- User Settings Title -->
-              <h2 class="text-center" th:text="#{changeCreds.header}">User Settings</h2>
-              <hr>
-              <th:block th:if="${messageType}">
+  gtag('config', 'G-R4D3Q2GG8X');
+</script>
+
+<body>
+  <th:block th:insert="~{fragments/common :: game}"></th:block>
+  <div id="page-container">
+    <div id="content-wrap">
+      <th:block th:insert="~{fragments/navbar.html :: navbar}"></th:block>
+      <br><br>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-9 bg-card">
+
+            <!-- User Settings Title -->
+            <h2 class="text-center" th:text="#{changeCreds.header}">User Settings</h2>
+            <hr>
+            <th:block th:if="${messageType}">
               <div class="alert alert-danger">
                 <span th:text="#{${messageType}}">Default message if not found</span>
               </div>
-              </th:block>
-              <!-- At the top of the user settings -->
-              <h3 class="text-center"><span th:text="#{welcome} + ' ' + ${username}">User</span>!</h3>
+            </th:block>
+            <!-- At the top of the user settings -->
+            <h3 class="text-center"><span th:text="#{welcome} + ' ' + ${username}">User</span>!</h3>
 
-              <!-- Change Username Form -->
-              <h4 th:text="#{changeCreds.changePassword}">Change password</h4>
-              <form action="api/v1/user/change-password-on-login" method="post">
-                <div class="mb-3">
-                  <label for="currentPassword" th:text="#{changeCreds.oldPassword}">Old Password</label>
-                  <input type="password" class="form-control" name="currentPassword" id="currentPassword" th:placeholder="#{changeCreds.oldPassword}">
-                </div>
-                <div class="mb-3">
-                  <label for="newPassword" th:text="#{changeCreds.newPassword}">New Password</label>
-                  <input type="password" class="form-control" name="newPassword" id="newPassword" th:placeholder="#{changeCreds.newPassword}">
-                </div>
-                <div class="mb-3">
-                  <label for="confirmNewPassword" th:text="#{account.confirmNewPassword}">Confirm New Password</label>
-                  <input type="password" class="form-control" name="confirmNewPassword" id="confirmNewPassword" th:placeholder="#{account.confirmNewPassword}">
-                </div>
-                <div class="mb-3">
-                  <button type="submit" class="btn btn-primary" th:text="#{changeCreds.submit}">Change credentials!</button>
-                </div>
-              </form>
-              <script>
-                document.addEventListener("DOMContentLoaded", function() {
-                  const form = document.querySelector('form[action="api/v1/user/change-password-on-login"]');
+            <!-- Change Username Form -->
+            <h4 th:text="#{changeCreds.changePassword}">Change password</h4>
+            <form action="api/v1/user/change-password-on-login" method="post">
+              <div class="mb-3">
+                <label for="currentPassword" th:text="#{changeCreds.oldPassword}">Old Password</label>
+                <input type="password" class="form-control" name="currentPassword" id="currentPassword"
+                  th:placeholder="#{changeCreds.oldPassword}">
+              </div>
+              <div class="mb-3">
+                <label for="newPassword" th:text="#{changeCreds.newPassword}">New Password</label>
+                <input type="password" class="form-control" name="newPassword" id="newPassword"
+                  th:placeholder="#{changeCreds.newPassword}">
+              </div>
+              <div class="mb-3">
+                <label for="confirmNewPassword" th:text="#{account.confirmNewPassword}">Confirm New Password</label>
+                <input type="password" class="form-control" name="confirmNewPassword" id="confirmNewPassword"
+                  th:placeholder="#{account.confirmNewPassword}">
+              </div>
+              <div class="mb-3">
+                <button type="submit" class="btn btn-primary" th:text="#{changeCreds.submit}">Change
+                  credentials!</button>
+              </div>
+            </form>
+            <script>
+              document.addEventListener("DOMContentLoaded", function () {
+                const form = document.querySelector('form[action="api/v1/user/change-password-on-login"]');
 
-                  form.addEventListener('submit', function(event) {
-                    const newPassword = document.getElementById('newPassword').value;
-                    const confirmNewPassword = document.getElementById('confirmNewPassword').value;
+                form.addEventListener('submit', function (event) {
+                  const newPassword = document.getElementById('newPassword').value;
+                  const confirmNewPassword = document.getElementById('confirmNewPassword').value;
 
-                    if (newPassword !== confirmNewPassword) {
-                      alert('New Password and Confirm New Password must match.');
-                      event.preventDefault(); // Prevent form submission
-                    }
-                  });
+                  if (newPassword !== confirmNewPassword) {
+                    alert('New Password and Confirm New Password must match.');
+                    event.preventDefault(); // Prevent form submission
+                  }
                 });
-              </script>
-            </div>
+              });
+            </script>
           </div>
         </div>
       </div>
-      <th:block th:insert="~{fragments/footer.html :: footer}"></th:block>
     </div>
-  </body>
+    <th:block th:insert="~{fragments/footer.html :: footer}"></th:block>
+  </div>
+</body>
+
 </html>

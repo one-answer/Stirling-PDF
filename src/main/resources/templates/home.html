@@ -5,6 +5,14 @@
 <head>
   <th:block th:insert="~{fragments/common :: head(title='')}"></th:block>
 </head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R4D3Q2GG8X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-R4D3Q2GG8X');
+</script>
 
 <body>
   <div id="page-container">
@@ -14,9 +22,6 @@
       <div class="p-5 rounded d-none d-md-block" id="jumbotron">
         <div class="container">
           <h1 class="display-4 fw-normal" th:text="${@appName}"></h1>
-          <p class="lead fs-4"
-            th:text="${@homeText != 'null' and @homeText != null and @homeText != ''} ? ${@homeText} : #{home.desc}">
-          </p>
         </div>
       </div>
       <br class="d-md-none">
@@ -30,7 +35,8 @@
         <input type="text" id="searchBar" onkeyup="filterCards()" th:placeholder="#{home.searchBar}" autofocus>
         <div class="features-container">
 
-          <div th:if="${@shouldShow}" class="feature-card favorite update-notice" id="update-link" style="display: none;">
+          <div th:if="${@shouldShow}" class="feature-card favorite update-notice" id="update-link"
+            style="display: none;">
             <a href="https://github.com/Stirling-Tools/Stirling-PDF/releases" target="_blank" rel="noopener">
               <div class="d-flex align-items-center">
                 <div id="tool-icon" class="advance" alt="icon">
@@ -44,10 +50,6 @@
             </a>
           </div>
 
-
-          <div
-            th:replace="~{fragments/card :: card(id='pipeline', cardTitle=#{home.pipeline.title}, cardText=#{home.pipeline.desc}, cardLink='pipeline', toolIcon='family_history', tags=#{pipeline.tags}, toolGroup='advance')}">
-          </div>
           <div
             th:replace="~{fragments/card :: card(id='view-pdf', cardTitle=#{home.viewPdf.title}, cardText=#{home.viewPdf.desc}, cardLink='view-pdf', toolIcon='menu_book', tags=#{viewPdf.tags}, toolGroup='other')}">
           </div>

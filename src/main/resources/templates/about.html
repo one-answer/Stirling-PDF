@@ -1,21 +1,32 @@
 <!DOCTYPE html>
-<html th:lang="${#locale.language}" th:dir="#{language.direction}" th:data-language="${#locale.toString()}" xmlns:th="https://www.thymeleaf.org">
-  <head>
-  <th:block th:insert="~{fragments/common :: head(title='<3')}"></th:block>
-  </head>
+<html th:lang="${#locale.language}" th:dir="#{language.direction}" th:data-language="${#locale.toString()}"
+  xmlns:th="https://www.thymeleaf.org">
 
-  <body>
-    <div id="page-container">
-      <div id="content-wrap">
-        <th:block th:insert="~{fragments/navbar.html :: navbar}"></th:block>
-        <br><br>
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-md-6 bg-card"></div>
-          </div>
+<head>
+  <th:block th:insert="~{fragments/common :: head(title='<3')}"></th:block>
+</head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R4D3Q2GG8X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-R4D3Q2GG8X');
+</script>
+
+<body>
+  <div id="page-container">
+    <div id="content-wrap">
+      <th:block th:insert="~{fragments/navbar.html :: navbar}"></th:block>
+      <br><br>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-6 bg-card"></div>
         </div>
       </div>
-      <th:block th:insert="~{fragments/footer.html :: footer}"></th:block>
     </div>
-  </body>
+    <th:block th:insert="~{fragments/footer.html :: footer}"></th:block>
+  </div>
+</body>
+
 </html>

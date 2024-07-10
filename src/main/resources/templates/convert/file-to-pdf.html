@@ -5,6 +5,14 @@
 <head>
   <th:block th:insert="~{fragments/common :: head(title=#{fileToPDF.title}, header=#{fileToPDF.header})}"></th:block>
 </head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R4D3Q2GG8X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-R4D3Q2GG8X');
+</script>
 
 <body>
   <th:block th:insert="~{fragments/common :: game}"></th:block>
@@ -42,7 +50,7 @@
                   href="https://help.libreoffice.org/latest/en-US/text/shared/guide/supported_formats.html">https://help.libreoffice.org/latest/en-US/text/shared/guide/supported_formats.html</a>
               </div>
               <br>
-              
+
               <button type="submit" id="submitBtn" class="btn btn-primary" th:text="#{fileToPDF.submit}"></button>
             </form>
 
