@@ -12,7 +12,7 @@
 
 This is a robust, locally hosted web-based PDF manipulation tool using Docker. It enables you to carry out various operations on PDF files, including splitting, merging, converting, reorganizing, adding images, rotating, compressing, and more. This locally hosted web application has evolved to encompass a comprehensive set of features, addressing all your PDF requirements.
 
-pdf百宝箱 does not initiate any outbound calls for record-keeping or tracking purposes.
+PDF百宝箱 does not initiate any outbound calls for record-keeping or tracking purposes.
 
 All files and PDFs exist either exclusively on the client side, reside in server memory only during task execution, or temporarily reside in a file solely for the execution of the task. Any file downloaded by the user will have been deleted from the server by that point.
 
@@ -105,7 +105,7 @@ Please view https://github.com/Stirling-Tools/Stirling-PDF/blob/main/LocalRunGui
 
 https://hub.docker.com/r/frooodle/s-pdf
 
-pdf百宝箱 has 2 different versions, a Full version and ultra-Lite version. Depending on the types of features you use you may want a smaller image to save on space.
+PDF百宝箱 has 2 different versions, a Full version and ultra-Lite version. Depending on the types of features you use you may want a smaller image to save on space.
 To see what the different versions offer please look at our [version mapping](https://github.com/Stirling-Tools/Stirling-PDF/blob/main/Version-groups.md)
 For people that don't mind about space optimization just use the latest tag.
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/frooodle/s-pdf/latest?label=Stirling-PDF%20Full)
@@ -159,7 +159,7 @@ Please view https://github.com/Stirling-Tools/Stirling-PDF/blob/main/HowToUseOCR
 
 ## Supported Languages
 
-pdf百宝箱 currently supports 28!
+PDF百宝箱 currently supports 28!
 
 | Language                                    | Progress                               |
 | ------------------------------------------- | -------------------------------------- |
@@ -199,7 +199,7 @@ Please see our [Contributing Guide](CONTRIBUTING.md)!
 
 ## Customisation
 
-pdf百宝箱 allows easy customization of the app.
+PDF百宝箱 allows easy customization of the app.
 Includes things like
 
 - Custom application name
@@ -310,7 +310,7 @@ For those wanting to use Stirling-PDFs backend API to link with their own custom
 
 Once the above has been done, on restart, a new stirling-pdf-DB.mv.db will show if everything worked.
 
-When you login to pdf百宝箱 you will be redirected to /login page to login with those default credentials. After login everything should function as normal
+When you login to PDF百宝箱 you will be redirected to /login page to login with those default credentials. After login everything should function as normal
 
 To access your account settings go to Account settings in the settings cog menu (top right in navbar) This Account settings menu is also where you find your API key.
 

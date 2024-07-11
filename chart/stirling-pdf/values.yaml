@@ -17,11 +17,11 @@ commonLabels: {}
 
 envs: []
 # - name: UI_APP_NAME
-#   value: "pdf百宝箱"
+#   value: "PDF百宝箱"
 # - name: UI_HOME_DESCRIPTION
 #   value: "Your locally hosted one-stop-shop for all your PDF needs."
 # - name: UI_APP_NAVBAR_NAME
-#   value: "pdf百宝箱"
+#   value: "PDF百宝箱"
 # - name: ALLOW_GOOGLE_VISIBILITY
 #   value: "true"
 # - name: APP_ROOT_PATH
