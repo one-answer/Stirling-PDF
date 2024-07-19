@@ -180,9 +180,9 @@
             th:replace="~{fragments/card :: card(id='sanitize-pdf', cardTitle=#{home.sanitizePdf.title}, cardText=#{home.sanitizePdf.desc}, cardLink='sanitize-pdf', toolIcon='sanitizer', tags=#{sanitizePdf.tags}, toolGroup='security')}">
           </div>
 
-          <div
+          <!-- <div
             th:replace="~{fragments/card :: card(id='url-to-pdf', cardTitle=#{home.URLToPDF.title}, cardText=#{home.URLToPDF.desc}, cardLink='url-to-pdf', toolIcon='link', tags=#{URLToPDF.tags}, toolGroup='convert')}">
-          </div>
+          </div> -->
           <div
             th:replace="~{fragments/card :: card(id='html-to-pdf', cardTitle=#{home.HTMLToPDF.title}, cardText=#{home.HTMLToPDF.desc}, cardLink='html-to-pdf', toolIcon='html', tags=#{HTMLToPDF.tags}, toolGroup='convert')}">
           </div>
