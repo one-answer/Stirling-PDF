@@ -23,7 +23,7 @@
           <!-- All Tools -->
           <li class="nav-item dropdown dropdown-mega position-static"
             th:classappend="${currentPage}=='remove-pages' OR ${currentPage}=='merge-pdfs' OR ${currentPage}=='split-pdfs' OR ${currentPage}=='crop' OR ${currentPage}=='adjust-contrast' OR ${currentPage}=='pdf-organizer' OR ${currentPage}=='rotate-pdf' OR ${currentPage}=='multi-page-layout' OR ${currentPage}=='scale-pages' OR ${currentPage}=='auto-split-pdf' OR ${currentPage}=='extract-page' OR ${currentPage}=='pdf-to-single-page' OR ${currentPage}=='add-password' OR ${currentPage}=='remove-password' OR ${currentPage}=='add-watermark' OR ${currentPage}=='cert-sign' OR ${currentPage}=='sanitize-pdf' OR ${currentPage}=='img-to-pdf' OR ${currentPage}=='file-to-pdf' OR ${currentPage}=='html-to-pdf' OR ${currentPage}=='url-to-pdf' OR ${currentPage}=='pdf-to-img' OR ${currentPage}=='pdf-to-word' OR ${currentPage}=='pdf-to-presentation' OR ${currentPage}=='pdf-to-text' OR ${currentPage}=='pdf-to-html' OR ${currentPage}=='pdf-to-xml' OR ${currentPage}=='pdf-to-pdfa' OR ${currentPage}=='sign' OR ${currentPage}=='repair' OR ${currentPage}=='compare' OR ${currentPage}=='show-javascript' OR ${currentPage}=='flatten' OR ${currentPage}=='remove-blanks' OR ${currentPage}=='remove-annotations' OR ${currentPage}=='extract-image-scans' OR ${currentPage}=='change-metadata' OR ${currentPage}=='add-image' OR ${currentPage}=='ocr-pdf' OR ${currentPage}=='change-permissions' OR ${currentPage}=='extract-images' OR ${currentPage}=='compress-pdf' OR ${currentPage}=='add-page-numbers' OR ${currentPage}=='auto-rename' OR ${currentPage}=='get-info-on-pdf' ? 'active' : ''">
-            <a class="nav-link" id="navbarDropdown-1" href="#" role="button" data-bs-toggle="dropdown"
+            <a class="nav-link feature-hidden hidden" id="navbarDropdown-1" href="#" role="button" data-bs-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
               <span class="material-symbols-rounded">
                 apps
@@ -230,7 +230,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#" th:href="@{multi-tool}"
+            <a class="nav-link feature-hidden hidden" href="#" th:href="@{multi-tool}"
               th:classappend="${currentPage}=='multi-tool' ? 'active' : ''" th:title="#{home.multiTool.desc}">
               <span class="material-symbols-rounded">
                 construction
@@ -241,7 +241,7 @@
 
 
           <li class="nav-item">
-            <a class="nav-link" href="#" title="#{home.compressPdfs.title}" th:href="@{compress-pdf}"
+            <a class="nav-link feature-hidden hidden" href="#" title="#{home.compressPdfs.title}" th:href="@{compress-pdf}"
               th:classappend="${currentPage}=='compress-pdf' ? 'active' : ''" th:title="#{home.compressPdfs.desc}">
               <span class="material-symbols-rounded">
                 zoom_in_map
@@ -252,7 +252,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#" th:href="@{split-pdfs}"
+            <a class="nav-link feature-hidden hidden" href="#" th:href="@{split-pdfs}"
               th:classappend="${currentPage}=='split-pdfs' ? 'active' : ''" th:title="#{home.split-pdfs.desc}">
               <span class="material-symbols-rounded">
                 cut
@@ -262,7 +262,7 @@
           </li>
 
           <!-- <li class="nav-item">
-            <a class="nav-link" href="#" th:href="@{merge-pdfs}"
+            <a class="nav-link feature-hidden hidden" href="#" th:href="@{merge-pdfs}"
               th:classappend="${currentPage}=='merge-pdfs' ? 'active' : ''" th:title="#{home.merge.desc}">
               <span class="material-symbols-rounded">
                 add_to_photos
@@ -274,7 +274,7 @@
         </ul>
         <ul class="navbar-nav  flex-nowrap">
           <li class="nav-item dropdown">
-            <a class="nav-link" id="navbarDropdown-5" href="#" role="button" data-bs-toggle="dropdown"
+            <a class="nav-link feature-hidden hidden" id="navbarDropdown-5" href="#" role="button" data-bs-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
               <span class="material-symbols-rounded">
                 star
@@ -288,7 +288,7 @@
           </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="dark-mode-toggle" href="#">
+            <a class="nav-link feature-hidden hidden" id="dark-mode-toggle" href="#">
               <span class="material-symbols-rounded" id="dark-mode-icon">
                 dark_mode
               </span>
@@ -296,7 +296,7 @@
             </a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown"
+            <a class="nav-link feature-hidden hidden" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
               <span class="material-symbols-rounded">
                 language
@@ -313,7 +313,7 @@
           </li>
           
           <li class="nav-item dropdown">
-            <a class="nav-link" href="#" id="searchDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link feature-hidden hidden" href="#" id="searchDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <span class="material-symbols-rounded">
                 search
               </span>
@@ -332,7 +332,7 @@
 
           <li class="nav-item">
             <!-- Settings Button -->
-            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#settingsModal">
+            <a href="#" class="nav-link feature-hidden hidden" data-bs-toggle="modal" data-bs-target="#settingsModal">
               <span class="material-symbols-rounded">
                 settings
               </span>

@@ -26,10 +26,10 @@
       <script src="js/homecard.js"></script>
       <div class=" container">
         <br>
-        <span class="material-symbols-rounded search-icon">
+        <span class="material-symbols-rounded search-icon feature-hidden hidden">
           search
         </span>
-        <input type="text" id="searchBar" onkeyup="filterCards()" th:placeholder="#{home.searchBar}" autofocus>
+        <input type="text" class="feature-hidden hidden" id="searchBar" onkeyup="filterCards()" th:placeholder="#{home.searchBar}" autofocus>
         <div class="features-container">
 
           <div th:if="${@shouldShow}" class="feature-card favorite update-notice" id="update-link"

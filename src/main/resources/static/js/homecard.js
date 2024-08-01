@@ -93,6 +93,9 @@ window.onload = initializeCards;
       document.querySelectorAll('.feature-card.hidden').forEach(el => {
         el.classList.remove('hidden');
       });
+      document.querySelectorAll('.feature-hidden.hidden').forEach(el => {
+        el.classList.remove('hidden');
+      });
     }).catch((err) => {
       console.error('Material Symbols Rounded font failed to load.');
     });
