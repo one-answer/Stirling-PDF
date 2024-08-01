@@ -86,14 +86,14 @@ function initializeCards() {
 
 window.onload = initializeCards;
 
-document.addEventListener("DOMContentLoaded", function () {
-  const materialIcons = new FontFaceObserver('Material Symbols Rounded');
-
-  materialIcons.load().catch(() => {
-    console.error('Material Symbols Rounded font failed to load.');
-  }).finally(() => {
-    document.querySelectorAll('.feature-card.hidden').forEach(el => {
-      el.classList.remove('hidden');
+  document.addEventListener("DOMContentLoaded", function() {
+    const materialIcons = new FontFaceObserver('Material Symbols Rounded');
+    
+    materialIcons.load('BESbswy', 100000).then(() => {
+      document.querySelectorAll('.feature-card.hidden').forEach(el => {
+        el.classList.remove('hidden');
+      });
+    }).catch((err) => {
+      console.error('Material Symbols Rounded font failed to load.');
     });
   });
-});
