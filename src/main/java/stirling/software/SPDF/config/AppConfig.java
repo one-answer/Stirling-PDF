@@ -43,7 +43,7 @@ public class AppConfig {
     @Bean(name = "appName")
     public String appName() {
         String homeTitle = applicationProperties.getUi().getAppName();
-        return (homeTitle != null) ? homeTitle : "PDF百宝箱";
+        return (homeTitle != null) ? homeTitle : "在线免费PDF处理";
     }
 
     @Bean(name = "appVersion")
@@ -72,7 +72,7 @@ public class AppConfig {
                 applicationProperties.getUi().getAppNameNavbar() != null
                         ? applicationProperties.getUi().getAppNameNavbar()
                         : applicationProperties.getUi().getAppName();
-        return (defaultNavBar != null) ? defaultNavBar : "PDF百宝箱";
+        return (defaultNavBar != null) ? defaultNavBar : "在线免费PDF处理";
     }
 
     @Bean(name = "enableAlphaFunctionality")

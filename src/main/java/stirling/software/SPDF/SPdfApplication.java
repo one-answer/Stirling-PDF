@@ -68,7 +68,7 @@ public class SPdfApplication {
         app.addInitializers(new ConfigInitializer());
         Map<String, String> propertyFiles = new HashMap<>();
 
-        // PDF百宝箱 settings file
+        // 在线免费PDF处理 settings file
         if (Files.exists(Paths.get("configs/settings.yml"))) {
             propertyFiles.put("spring.config.additional-location", "file:configs/settings.yml");
         } else {
