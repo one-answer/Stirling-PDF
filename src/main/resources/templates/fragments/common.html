@@ -1,32 +1,33 @@
 <th:block th:fragment="head">
     <!-- Title -->
-    <title th:text="${@appName} + (${title} != null and ${title} != '' ? ' - ' + ${title} : '')"></title>
+    <title th:text="${title != null and title != '' ? @appName + ' - ' + title : @appName}"></title>
 
     <!-- Basic Metadata -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" th:content="${@appName} + (${header} != null and ${header} != '' ? ' - ' + ${header} : '')">
-    <meta name="keywords" th:content="PDF, PDF处理, PDF编辑, 在线PDF, 免费PDF工具, PDF转换, PDF合并, PDF分割, PDF压缩, PDF转Word, PDF转图片, OCR, 水印, 签名">
+    <meta name="description" th:content="${header != null and header != '' ? @appName + ' - ' + header : @appName}">
+    <meta name="keywords" content="PDF, PDF处理, PDF编辑, 在线PDF, 免费PDF工具, PDF转换, PDF合并, PDF分割, PDF压缩, PDF转Word, PDF转图片, OCR, 水印, 签名">
     <meta name="author" content="Stirling-PDF">
     <meta name="robots" content="index, follow">
     <meta name="msapplication-TileColor" content="#2d89ef">
     <meta name="theme-color" content="#ffffff">
 
     <!-- Canonical URL -->
-    <link rel="canonical" th:href="${#httpServletRequest.requestURL}">
+    <!-- Site URL can be configured in settings.yml under ui.siteUrl -->
+    <link rel="canonical" href="/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" th:content="${#httpServletRequest.requestURL}">
-    <meta property="og:title" th:content="${@appName} + (${title} != null and ${title} != '' ? ' - ' + ${title} : '')">
-    <meta property="og:description" th:content="${@appName} + (${header} != null and ${header} != '' ? ' - ' + ${header} : '')">
+    <meta property="og:url" content="/">
+    <meta property="og:title" th:content="${title != null and title != '' ? @appName + ' - ' + title : @appName}">
+    <meta property="og:description" th:content="${header != null and header != '' ? @appName + ' - ' + header : @appName}">
     <meta property="og:image" content="/android-chrome-512x512.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" th:content="${#httpServletRequest.requestURL}">
-    <meta property="twitter:title" th:content="${@appName} + (${title} != null and ${title} != '' ? ' - ' + ${title} : '')">
-    <meta property="twitter:description" th:content="${@appName} + (${header} != null and ${header} != '' ? ' - ' + ${header} : '')">
+    <meta property="twitter:url" content="/">
+    <meta property="twitter:title" th:content="${title != null and title != '' ? @appName + ' - ' + title : @appName}">
+    <meta property="twitter:description" th:content="${header != null and header != '' ? @appName + ' - ' + header : @appName}">
     <meta property="twitter:image" content="/android-chrome-512x512.png">
 
     <!-- Icons -->
@@ -98,8 +99,8 @@
       "@context": "https://schema.org",
       "@type": "WebApplication",
       "name": [[${@appName}]],
-      "url": [[${#httpServletRequest.requestURL}]],
-      "description": [[${@appName}]] + (${header} != null ? ' - ' + [[${header}]] : ''),
+      "url": "/",
+      "description": [[${header != null ? @appName + ' - ' + header : @appName}]],
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "Any",
       "offers": {

@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.MediaType;
@@ -86,10 +87,12 @@ public class HomeWebController {
 
     private String getSiteUrl() {
         String siteUrl = applicationProperties.getUi().getSiteUrl();
-        return (siteUrl != null && !siteUrl.isEmpty()) ? siteUrl : "http://localhost:8080";
+        return (siteUrl != null && !siteUrl.isEmpty()) ? siteUrl : "";
     }
 
-    @Autowired private RequestMappingHandlerMapping handlerMapping;
+    @Autowired
+    @Qualifier("requestMappingHandlerMapping")
+    private RequestMappingHandlerMapping handlerMapping;
 
     @GetMapping(value = "/sitemap.xml", produces = MediaType.APPLICATION_XML_VALUE)
     @ResponseBody
