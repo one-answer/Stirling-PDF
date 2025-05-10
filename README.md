@@ -25,6 +25,7 @@ All files and PDFs exist either exclusively on the client side, reside in server
 - Parallel file processing and downloads
 - API for integration with external scripts
 - Optional Login and Authentication support (see [here](https://github.com/Stirling-Tools/Stirling-PDF/tree/main#login-authentication) for documentation)
+- SEO optimization with meta tags, Open Graph, Twitter Cards, and automatic sitemap generation
 
 ## **PDF Features**
 
@@ -203,7 +204,7 @@ Please see our [Contributing Guide](CONTRIBUTING.md)!
 Includes things like
 
 - Custom application name
-- Custom slogans, icons, HTML, images CSS etc (via file overrides) 
+- Custom slogans, icons, HTML, images CSS etc (via file overrides)
 
 There are two options for this, either using the generated settings file ``settings.yml``
 This file is located in the ``/configs`` directory and follows standard YAML formatting
@@ -258,7 +259,7 @@ security:
 
 system:
   defaultLocale: 'en-US' # Set the default language (e.g. 'de-DE', 'fr-FR', etc)
-  googlevisibility: false # 'true' to allow Google visibility (via robots.txt), 'false' to disallow
+  googlevisibility: false # 'true' to allow Google visibility (via robots.txt and sitemap.xml), 'false' to disallow
   enableAlphaFunctionality: false # Set to enable functionality which might need more testing before it fully goes live (This feature might make no changes)
   showUpdate: true # see when a new update is available
   showUpdateOnlyAdmin: false # Only admins can see when a new update is available, depending on showUpdate it must be set to 'true'
@@ -268,6 +269,7 @@ ui:
   appName: null # Application's visible name
   homeDescription: null # Short description or tagline shown on homepage.
   appNameNavbar: null # Name displayed on the navigation bar
+  siteUrl: null # Full URL of your site (e.g., 'https://your-domain.com') for SEO and sitemap generation
 
 endpoints:
   toRemove: [] # List endpoints to disable (e.g. ['img-to-pdf', 'remove-pages'])

@@ -2,12 +2,32 @@
     <!-- Title -->
     <title th:text="${@appName} + (${title} != null and ${title} != '' ? ' - ' + ${title} : '')"></title>
 
-    <!-- Metadata -->
+    <!-- Basic Metadata -->
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" th:content="${@appName} + (${header} != null and ${header} != '' ? ' - ' + ${header} : '')">
+    <meta name="keywords" th:content="PDF, PDF处理, PDF编辑, 在线PDF, 免费PDF工具, PDF转换, PDF合并, PDF分割, PDF压缩, PDF转Word, PDF转图片, OCR, 水印, 签名">
+    <meta name="author" content="Stirling-PDF">
+    <meta name="robots" content="index, follow">
     <meta name="msapplication-TileColor" content="#2d89ef">
     <meta name="theme-color" content="#ffffff">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" th:href="${#httpServletRequest.requestURL}">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" th:content="${#httpServletRequest.requestURL}">
+    <meta property="og:title" th:content="${@appName} + (${title} != null and ${title} != '' ? ' - ' + ${title} : '')">
+    <meta property="og:description" th:content="${@appName} + (${header} != null and ${header} != '' ? ' - ' + ${header} : '')">
+    <meta property="og:image" content="/android-chrome-512x512.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" th:content="${#httpServletRequest.requestURL}">
+    <meta property="twitter:title" th:content="${@appName} + (${title} != null and ${title} != '' ? ' - ' + ${title} : '')">
+    <meta property="twitter:description" th:content="${@appName} + (${header} != null and ${header} != '' ? ' - ' + ${header} : '')">
+    <meta property="twitter:image" content="/android-chrome-512x512.png">
 
     <!-- Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -71,6 +91,24 @@
     <script src="js/cacheFormInputs.js"></script>
     <script src="js/tab-container.js"></script>
     <script src="js/darkmode.js"></script>
+
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json" th:inline="javascript">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": [[${@appName}]],
+      "url": [[${#httpServletRequest.requestURL}]],
+      "description": [[${@appName}]] + (${header} != null ? ' - ' + [[${header}]] : ''),
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
   </th:block>
 
 <th:block th:fragment="game">
@@ -81,19 +119,19 @@
 
            // Find the file input within the form
           var fileInput = $('input[type="file"]');
-          
+
           // Find the closest enclosing form of the file input
           var form = fileInput.closest('form');
-          
+
           // Find the submit button within the form
           var submitButton = form.find('button[type="submit"], input[type="submit"]');
-          
+
           const boredWaitingText = /*[[#{bored}]]*/ 'Bored Waiting?';
           const downloadCompleteText = /*[[#{downloadComplete}]]*/ 'Download Complete';
           window.downloadCompleteText = downloadCompleteText;
           // Create the 'show-game-btn' button
           var gameButton = $('<button type="button" class="btn btn-primary" id="show-game-btn" style="display:none;">' + boredWaitingText + '</button><br><br>');
-          
+
           // Insert the 'show-game-btn' just above the submit button
           submitButton.before(gameButton);
 

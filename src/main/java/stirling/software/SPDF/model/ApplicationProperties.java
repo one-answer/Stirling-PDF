@@ -770,6 +770,7 @@ public class ApplicationProperties {
         private String appName;
         private String homeDescription;
         private String appNameNavbar;
+        private String siteUrl;
 
         public String getAppName() {
             if (appName != null && appName.trim().length() == 0) return null;
@@ -798,6 +799,15 @@ public class ApplicationProperties {
             this.appNameNavbar = appNameNavbar;
         }
 
+        public String getSiteUrl() {
+            if (siteUrl != null && siteUrl.trim().length() == 0) return null;
+            return siteUrl;
+        }
+
+        public void setSiteUrl(String siteUrl) {
+            this.siteUrl = siteUrl;
+        }
+
         @Override
         public String toString() {
             return "UserInterface [appName="
@@ -806,6 +816,8 @@ public class ApplicationProperties {
                     + homeDescription
                     + ", appNameNavbar="
                     + appNameNavbar
+                    + ", siteUrl="
+                    + siteUrl
                     + "]";
         }
     }
